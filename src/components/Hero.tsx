@@ -10,7 +10,7 @@ import {
   twoCol,
   flexAlign,
 } from '../abstracts/Mixins';
-import { companyLogos } from '../data';
+import { companyLogosData } from '../data';
 
 const Container = styled.div`
   ${maxWidthLg}
@@ -36,7 +36,7 @@ const Hero = (): JSX.Element => {
           <PrimaryButton>Submit Resources</PrimaryButton>
           <Paragraph>Used by individuals in:</Paragraph>
           <div className='icons'>
-            {companyLogos.map((logo) => (
+            {companyLogosData.map((logo) => (
               <div key={logo.id} className='icon'>
                 <Image src={logo.icon} alt={logo.alt} />
               </div>
