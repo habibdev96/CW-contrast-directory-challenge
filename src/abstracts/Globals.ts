@@ -53,7 +53,7 @@ const Globals = createGlobalStyle`
   img {
     width: 100%;
     object-fit: cover;
-    pointer-events: none;
+    user-select: none;
   }
 
   a {
