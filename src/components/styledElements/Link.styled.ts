@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { textStyles } from '../../abstracts/Mixins';
+import { headingStyles, textStyles } from '../../abstracts/Mixins';
+import { flexAlign } from '../../abstracts/Mixins';
 
 export const NavbarLink = styled.a`
   ${textStyles}
@@ -9,5 +10,27 @@ export const NavbarLink = styled.a`
   &:hover,
   &:focus {
     text-decoration: underline;
+  }
+`;
+
+export const CardLink = styled.a`
+  ${headingStyles}
+  ${flexAlign}
+  gap: 1rem;
+  font-size: 1.5rem;
+  color: var(--black);
+
+  .icon {
+    color: var(--black);
+    font-size: var(--xs);
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+
+    .icon {
+      margin-left: 0.5rem;
+    }
   }
 `;

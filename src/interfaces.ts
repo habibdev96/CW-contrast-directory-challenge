@@ -4,6 +4,11 @@ export interface ICompanyLogosData {
   alt: string;
 }
 
+export interface IResourcesTabData {
+  id: number;
+  title: string;
+}
+
 export interface IResourcesData {
   id: number;
   logo: StaticImageData;

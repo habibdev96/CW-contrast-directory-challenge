@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { headingStyles } from '../../abstracts/Mixins';
+import { textStyles, headingStyles } from '../../abstracts/Mixins';
 
 export const PrimaryButton = styled.button`
   ${headingStyles}
@@ -15,5 +15,21 @@ export const PrimaryButton = styled.button`
   &:hover,
   &:focus {
     background-color: var(--purpleActive);
+  }
+`;
+
+export const TabButton = styled.button`
+  ${textStyles}
+  font-size: 1.5rem;
+  padding: 1rem;
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+  border-radius: var(--mainRadius);
+  color: var(--darkGrey);
+
+  &.active {
+    font-weight: bold;
+    background-color: var(--lighterGrey);
   }
 `;

@@ -6,6 +6,7 @@ const Globals = createGlobalStyle`
     --white: hsl(0, 0%, 100%);
     --offWhite: hsl(0, 0%, 90%);
     --black: hsl(163, 11%, 12%);
+    --lighterGrey: hsl(210, 9%, 96%);
     --lightGrey: hsl(233, 5%, 63%);
     --darkGrey: hsl(0, 0%, 35%);
     --purple: hsl(258, 83%, 45%);

@@ -6,3 +6,9 @@ export const MainHeading = styled.h1`
   font-size: 5.6rem;
   color: var(--black);
 `;
+
+export const CardHeading = styled.h2`
+  ${headingStyles}
+  font-size: 1.8rem;
+  color: var(--black);
+`;

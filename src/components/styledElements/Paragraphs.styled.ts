@@ -3,7 +3,7 @@ import { textStyles } from '../../abstracts/Mixins';
 
 const Paragraph = styled.p`
   ${textStyles}
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: var(--darkGrey);
   padding: 2rem 0;
 `;

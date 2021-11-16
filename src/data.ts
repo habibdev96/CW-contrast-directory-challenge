@@ -31,13 +31,24 @@ import resourceIconLogoFour from '../public/assets/icons/tabler-icons-logo.svg';
 import resourceIconLogoFive from '../public/assets/icons/icons8-logo.svg';
 import resourceIconLogoSix from '../public/assets/icons/flaticon-logo.svg';
 
-import { ICompanyLogosData, IResourcesData } from './interfaces';
+import {
+  ICompanyLogosData,
+  IResourcesData,
+  IResourcesTabData,
+} from './interfaces';
 
 export const companyLogosData: ICompanyLogosData[] = [
   { id: 1, icon: companyLogoOne, alt: 'google logo' },
   { id: 2, icon: companyLogoTwo, alt: 'discord logo' },
   { id: 3, icon: companyLogoThree, alt: 'slack logo' },
   { id: 4, icon: companyLogoFour, alt: 'twitter logo' },
+];
+
+export const resourcesTabData: IResourcesTabData[] = [
+  { id: 1, title: 'Fonts' },
+  { id: 2, title: 'Mockups' },
+  { id: 3, title: 'Illustrations' },
+  { id: 4, title: 'Icons' },
 ];
 
 export const resourcesData: IResourcesData[][] = [
