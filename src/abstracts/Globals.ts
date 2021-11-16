@@ -9,9 +9,10 @@ const Globals = createGlobalStyle`
     --lightGrey: hsl(233, 5%, 63%);
     --darkGrey: hsl(0, 0%, 35%);
     --purple: hsl(258, 83%, 45%);
+    --purpleActive: hsl(258, 83%, 55%);
     
     /* radius */
-    --mainRadius: 2rem;
+    --mainRadius: 0.5rem;
 
     /* grid gap */
     --gap: 5rem; 
@@ -46,6 +47,7 @@ const Globals = createGlobalStyle`
 
   body {
     font-family: 'Archivo', sans-serif;
+    background-color: var(--white);
   }
 
   img {
