@@ -18,6 +18,17 @@ export const PrimaryButton = styled.button`
   }
 `;
 
+export const SecondaryButton = styled(PrimaryButton)`
+  background-color: var(--lightPurple);
+  color: var(--purple);
+  padding: 1.8rem 1.5rem;
+
+  &:hover,
+  &:focus {
+    background-color: var(--lightPurpleActive);
+  }
+`;
+
 export const TabButton = styled.button`
   ${textStyles}
   font-size: 1.5rem;

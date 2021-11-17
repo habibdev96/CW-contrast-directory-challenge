@@ -11,6 +11,8 @@ const Globals = createGlobalStyle`
     --darkGrey: hsl(0, 0%, 35%);
     --purple: hsl(258, 83%, 45%);
     --purpleActive: hsl(258, 83%, 55%);
+    --lightPurple: hsl(252, 82%, 87%);
+    --lightPurpleActive: hsl(252, 82%, 97%);
     
     /* radius */
     --mainRadius: 0.5rem;

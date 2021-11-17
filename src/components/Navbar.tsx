@@ -6,7 +6,7 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { maxWidthLg, flexBetween, flexAlign } from '../abstracts/Mixins';
 import { NavbarLink } from './styledElements/Link.styled';
 import { PrimaryButton } from './styledElements/Buttons.styled';
-import { StyledInput } from './styledElements/Inputs.styled';
+import { PrimaryInput } from './styledElements/Inputs.styled';
 
 const Container = styled.div`
   ${maxWidthLg}
@@ -56,7 +56,7 @@ const Navbar = (): JSX.Element => {
         </div>
         <div className='right'>
           <div className='input'>
-            <StyledInput placeholder='Search Resources' type='text' />
+            <PrimaryInput placeholder='Search Resources' type='text' />
             <AiOutlineSearch className='icon' />
           </div>
           <PrimaryButton>Submit Resources</PrimaryButton>

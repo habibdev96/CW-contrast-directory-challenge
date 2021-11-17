@@ -29,7 +29,7 @@ const ResourceCard = ({
         <Image src={logo} alt={title} />
       </div>
       <CardHeading>{title}</CardHeading>
-      <Paragraph>{description}</Paragraph>
+      <Paragraph dark={true}>{description}</Paragraph>
       <CardLink href={link} target='_blank' rel='noreferrer'>
         <span>Visit Resource</span>
         <BsArrowRight className='icon' />

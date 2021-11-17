@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { textStyles } from '../../abstracts/Mixins';
 
-export const StyledInput = styled.input`
+export const PrimaryInput = styled.input`
   ${textStyles}
   padding: 1rem 1rem 1rem 5rem;
   outline: 0;
@@ -11,4 +11,10 @@ export const StyledInput = styled.input`
   color: var(--darkGrey);
   border-radius: var(--mainRadius);
   background-color: var(--offWhite);
+`;
+
+export const SecondaryInput = styled(PrimaryInput)`
+  background-color: var(--white);
+  color: var(--darkGrey);
+  padding: 1rem;
 `;

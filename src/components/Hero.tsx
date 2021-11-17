@@ -29,12 +29,12 @@ const Hero = (): JSX.Element => {
       <Container>
         <div>
           <MainHeading>Design Resources for developers.</MainHeading>
-          <Paragraph>
+          <Paragraph dark={true}>
             Explore a collection of 3400+ curated design resources, both free
             and paid, developers can use to create landing pages quicker.
           </Paragraph>
           <PrimaryButton>Submit Resources</PrimaryButton>
-          <Paragraph>Used by individuals in:</Paragraph>
+          <Paragraph dark={true}>Used by individuals in:</Paragraph>
           <div className='icons'>
             {companyLogosData.map((logo) => (
               <div key={logo.id} className='icon'>
