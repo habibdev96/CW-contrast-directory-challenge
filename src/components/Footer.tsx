@@ -16,6 +16,7 @@ const Container = styled.div`
   ${maxWidthLg}
   ${sectionSpacingMd}
   ${flexBetween}
+  align-items: flex-start;
 
   .left {
     flex: 30%;
