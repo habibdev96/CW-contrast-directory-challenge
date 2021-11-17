@@ -34,3 +34,7 @@ export const CardLink = styled.a`
     }
   }
 `;
+
+export const FooterLink = styled(NavbarLink)`
+  font-size: 1.5rem;
+`;

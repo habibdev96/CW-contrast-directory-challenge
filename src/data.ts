@@ -35,6 +35,7 @@ import {
   ICompanyLogosData,
   IResourcesData,
   IResourcesTabData,
+  IFooterLinksData,
 } from './interfaces';
 
 export const companyLogosData: ICompanyLogosData[] = [
@@ -247,4 +248,39 @@ export const resourcesData: IResourcesData[][] = [
       link: 'https://www.flaticon.com/',
     },
   ],
+];
+
+export const footerLinksData: IFooterLinksData[] = [
+  {
+    id: 1,
+    title: 'Resources',
+    links: [
+      { id: 1.1, link: 'Fonts' },
+      { id: 1.2, link: 'Illustrations' },
+      { id: 1.3, link: 'Mockups' },
+      { id: 1.4, link: 'Icons' },
+      { id: 1.5, link: 'Books' },
+    ],
+  },
+  {
+    id: 2,
+    title: 'Company',
+    links: [
+      { id: 2.1, link: 'About' },
+      { id: 2.2, link: 'Blog' },
+    ],
+  },
+  {
+    id: 3,
+    title: 'Support',
+    links: [
+      { id: 3.1, link: 'FAQ' },
+      { id: 3.2, link: 'Contact' },
+    ],
+  },
+  {
+    id: 4,
+    title: 'Sponser',
+    links: [{ id: 4.1, link: 'Sponser Resources' }],
+  },
 ];

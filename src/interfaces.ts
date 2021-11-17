@@ -16,3 +16,12 @@ export interface IResourcesData {
   description: string;
   link: string;
 }
+
+export interface IFooterLinksData {
+  id: number;
+  title: string;
+  links: {
+    id: number;
+    link: string;
+  }[];
+}

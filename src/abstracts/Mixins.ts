@@ -34,6 +34,13 @@ const threeCol = css`
   gap: var(--gap);
 `;
 
+const fourCol = css`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items: flex-start;
+  gap: 1rem;
+`;
+
 const headingStyles = css`
   font-weight: 700;
   letter-spacing: 0.2rem;
@@ -79,6 +86,7 @@ export {
   flexBetween,
   twoCol,
   threeCol,
+  fourCol,
   headingStyles,
   textStyles,
   sectionSpacingSm,
