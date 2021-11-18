@@ -11,6 +11,7 @@ import { CardHeading } from './styledElements/Headings.styled';
 import { FooterLink } from './styledElements/Link.styled';
 import logo from '../../public/assets/logos/contrast-logo.svg';
 import { footerLinksData } from '../data';
+import { media } from '../abstracts/Responsive';
 
 const Container = styled.div`
   ${maxWidthLg}
@@ -18,9 +19,17 @@ const Container = styled.div`
   ${flexBetween}
   align-items: flex-start;
 
+  ${media.md} {
+    flex-direction: column;
+  }
+
   .left {
     flex: 30%;
     margin-right: 5rem;
+
+    ${media.sm} {
+      margin-right: 0;
+    }
   }
 
   .right {

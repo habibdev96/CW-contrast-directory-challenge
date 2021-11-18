@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { textStyles } from '../../abstracts/Mixins';
+import { media } from '../../abstracts/Responsive';
 
 export const PrimaryInput = styled.input`
   ${textStyles}
@@ -11,6 +12,10 @@ export const PrimaryInput = styled.input`
   color: var(--darkGrey);
   border-radius: var(--mainRadius);
   background-color: var(--offWhite);
+
+  ${media.md} {
+    width: 100%;
+  }
 `;
 
 export const SecondaryInput = styled(PrimaryInput)`

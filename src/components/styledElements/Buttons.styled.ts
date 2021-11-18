@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { textStyles, headingStyles } from '../../abstracts/Mixins';
+import { media } from '../../abstracts/Responsive';
 
 export const PrimaryButton = styled.button`
   ${headingStyles}
@@ -11,6 +12,10 @@ export const PrimaryButton = styled.button`
   color: var(--white);
   border-radius: var(--mainRadius);
   transition: var(--mainTransition);
+
+  ${media.md} {
+    width: 100%;
+  }
 
   &:hover,
   &:focus {

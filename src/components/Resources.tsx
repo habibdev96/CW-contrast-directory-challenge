@@ -4,9 +4,18 @@ import { TabButton } from './styledElements/Buttons.styled';
 import ResourceCard from './ResourceCard';
 import { resourcesTabData, resourcesData } from '../data';
 import { maxWidthLg, sectionSpacingSm, threeCol } from '../abstracts/Mixins';
+import { media } from '../abstracts/Responsive';
 
 const Container = styled.div`
   ${maxWidthLg}
+
+  .tabs {
+    padding: 0 2rem;
+
+    ${media.sm} {
+      text-align: center;
+    }
+  }
 
   .cards {
     ${sectionSpacingSm}
@@ -20,7 +29,7 @@ const Resources = (): JSX.Element => {
   return (
     <section>
       <Container>
-        <div>
+        <div className='tabs'>
           {resourcesTabData.map((tab, index) => (
             <TabButton
               key={tab.id}

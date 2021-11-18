@@ -7,11 +7,18 @@ import { maxWidthLg, flexBetween, flexAlign } from '../abstracts/Mixins';
 import { NavbarLink } from './styledElements/Link.styled';
 import { PrimaryButton } from './styledElements/Buttons.styled';
 import { PrimaryInput } from './styledElements/Inputs.styled';
+import { media } from '../abstracts/Responsive';
 
 const Container = styled.div`
   ${maxWidthLg}
   ${flexBetween}
   padding: 3rem 2rem;
+
+  ${media.md} {
+    .desktop-link {
+      display: none;
+    }
+  }
 
   .left {
     ${flexAlign}
@@ -24,6 +31,10 @@ const Container = styled.div`
   .right {
     ${flexAlign}
     gap: 2rem;
+
+    ${media.md} {
+      display: none;
+    }
   }
 
   .input {
@@ -47,11 +58,11 @@ const Navbar = (): JSX.Element => {
         <div className='left'>
           <Link href='/' passHref>
             <div className='logo'>
-              <Image src={logo} alt='contrast logo' />
+              <Image src={logo} alt='contrast logo' layout='fixed' />
             </div>
           </Link>
           <Link href='/browse' passHref>
-            <NavbarLink>Browse</NavbarLink>
+            <NavbarLink className='desktop-link'>Browse</NavbarLink>
           </Link>
         </div>
         <div className='right'>

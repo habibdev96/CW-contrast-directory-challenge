@@ -1,4 +1,5 @@
 import { css } from 'styled-components';
+import { media } from './Responsive';
 
 const flexAlign = css`
   display: flex;
@@ -32,13 +33,17 @@ const threeCol = css`
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   align-items: center;
   gap: var(--gap);
+
+  ${media.md} {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 `;
 
 const fourCol = css`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   align-items: flex-start;
-  gap: 1rem;
+  gap: 2rem;
 `;
 
 const headingStyles = css`

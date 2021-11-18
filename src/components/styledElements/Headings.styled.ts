@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 import { headingStyles } from '../../abstracts/Mixins';
+import { media } from '../../abstracts/Responsive';
 
 export const MainHeading = styled.h1`
   ${headingStyles}
   font-size: 5.6rem;
   color: var(--black);
+
+  ${media.sm} {
+    font-size: 3.4rem;
+  }
 `;
 
 export const SectionHeading = styled.h2`
