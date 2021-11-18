@@ -9,10 +9,17 @@ import { PrimaryButton } from './styledElements/Buttons.styled';
 import { PrimaryInput } from './styledElements/Inputs.styled';
 import { media } from '../abstracts/Responsive';
 
+const StyledNav = styled.nav`
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  background-color: var(--white);
+`;
+
 const Container = styled.div`
   ${maxWidthLg}
   ${flexBetween}
-  padding: 3rem 2rem;
+  padding: 2rem;
 
   ${media.md} {
     .desktop-link {
@@ -53,7 +60,7 @@ const Container = styled.div`
 
 const Navbar = (): JSX.Element => {
   return (
-    <nav>
+    <StyledNav>
       <Container>
         <div className='left'>
           <Link href='/' passHref>
@@ -73,7 +80,7 @@ const Navbar = (): JSX.Element => {
           <PrimaryButton>Submit Resources</PrimaryButton>
         </div>
       </Container>
-    </nav>
+    </StyledNav>
   );
 };
 

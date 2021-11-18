@@ -16,6 +16,7 @@ const Container = styled.div`
   ${maxWidthLg}
   ${sectionSpacingMd}
   ${twoCol}
+  padding-top: 15rem;
 
   .icons {
     ${flexAlign}
