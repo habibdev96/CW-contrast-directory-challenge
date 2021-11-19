@@ -7,6 +7,7 @@ import { maxWidthLg, flexBetween, flexAlign } from '../abstracts/Mixins';
 import { NavbarLink } from './styledElements/Link.styled';
 import { PrimaryButton } from './styledElements/Buttons.styled';
 import { PrimaryInput } from './styledElements/Inputs.styled';
+import MobileMenuToggler from './MobileMenuToggler';
 import { media } from '../abstracts/Responsive';
 
 const StyledNav = styled.nav`
@@ -77,8 +78,9 @@ const Navbar = (): JSX.Element => {
             <PrimaryInput placeholder='Search Resources' type='text' />
             <AiOutlineSearch className='icon' />
           </div>
-          <PrimaryButton>Submit Resources</PrimaryButton>
+          <PrimaryButton className='btn'>Submit Resources</PrimaryButton>
         </div>
+        <MobileMenuToggler />
       </Container>
     </StyledNav>
   );

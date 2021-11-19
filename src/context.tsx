@@ -1,7 +1,12 @@
 import React, { createContext, useState, useContext } from 'react';
 
 const useValue = () => {
-  return {};
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  return {
+    isMobileMenuOpen,
+    setIsMobileMenuOpen,
+  };
 };
 
 const GlobalStateContext = createContext({} as ReturnType<typeof useValue>);
