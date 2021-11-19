@@ -9,10 +9,11 @@ import { PrimaryButton } from './styledElements/Buttons.styled';
 import { PrimaryInput } from './styledElements/Inputs.styled';
 import MobileMenuToggler from './MobileMenuToggler';
 import { media } from '../abstracts/Responsive';
+import { useGlobalState } from '../context';
 
 const StyledNav = styled.nav`
   position: fixed;
-  z-index: 1000;
+  z-index: 3000;
   width: 100%;
   background-color: var(--white);
 `;
@@ -60,12 +61,14 @@ const Container = styled.div`
 `;
 
 const Navbar = (): JSX.Element => {
+  const { handleMobileMenuClose } = useGlobalState();
+
   return (
     <StyledNav>
       <Container>
         <div className='left'>
           <Link href='/' passHref>
-            <div className='logo'>
+            <div className='logo' onClick={handleMobileMenuClose}>
               <Image src={logo} alt='contrast logo' layout='fixed' />
             </div>
           </Link>

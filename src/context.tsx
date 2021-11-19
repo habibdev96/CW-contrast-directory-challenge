@@ -3,9 +3,12 @@ import React, { createContext, useState, useContext } from 'react';
 const useValue = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const handleMobileMenuClose = (): void => setIsMobileMenuOpen(false);
+
   return {
     isMobileMenuOpen,
     setIsMobileMenuOpen,
+    handleMobileMenuClose,
   };
 };
 
