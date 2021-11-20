@@ -62,7 +62,13 @@ const StyledMobileMenu = styled.div`
 `;
 
 const MobileMenu = (): JSX.Element | null => {
-  const { isMobileMenuOpen, handleMobileMenuClose } = useGlobalState();
+  const { isMobileMenuOpen, handleMobileMenuClose, handleModalOpen } =
+    useGlobalState();
+
+  const handleButtonClick = (): void => {
+    handleMobileMenuClose();
+    handleModalOpen();
+  };
 
   if (isMobileMenuOpen) {
     return (
@@ -79,7 +85,9 @@ const MobileMenu = (): JSX.Element | null => {
                 <PrimaryInput placeholder='Search Resources' type='text' />
                 <AiOutlineSearch className='icon' />
               </div>
-              <PrimaryButton className='btn'>Submit Resources</PrimaryButton>
+              <PrimaryButton className='btn' onClick={handleButtonClick}>
+                Submit Resources
+              </PrimaryButton>
             </form>
           </div>
         </StyledMobileMenu>

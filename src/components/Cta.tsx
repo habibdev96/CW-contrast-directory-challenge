@@ -7,6 +7,7 @@ import { SecondaryInput } from './styledElements/Inputs.styled';
 import { SecondaryButton } from './styledElements/Buttons.styled';
 import { maxWidthLg, twoCol, flexAlign } from '../abstracts/Mixins';
 import { media } from '../abstracts/Responsive';
+import { useGlobalState } from '../context';
 
 const StyledSection = styled.section`
   margin: 0 2rem;
@@ -31,14 +32,40 @@ const Container = styled.div`
   .form {
     ${flexAlign}
     gap: 1rem;
+    position: relative;
 
     ${media.md} {
       flex-direction: column;
+      margin-top: 2rem;
+    }
+  }
+
+  .message {
+    position: absolute;
+    width: 100%;
+    top: -40%;
+    left: 32%;
+    font-size: 1.3rem;
+    color: var(--white);
+
+    ${media.md} {
+      top: -20%;
+      left: 60%;
     }
   }
 `;
 
 const Cta = (): JSX.Element => {
+  const { handleSubmit, register, errors, onSubmit } = useGlobalState();
+
+  const emailValidation = {
+    required: 'Email is required',
+    pattern: {
+      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+      message: 'Invalid email address',
+    },
+  };
+
   return (
     <StyledSection>
       <Container>
@@ -50,8 +77,19 @@ const Cta = (): JSX.Element => {
             Discover dozens of design resources each week from educational
             material to illustrations
           </Paragraph>
-          <form className='form'>
-            <SecondaryInput type='text' placeholder='john@example.com' />
+          <form
+            className={`form ${errors?.email && 'error'}`}
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <SecondaryInput
+              type='text'
+              placeholder='john@example.com'
+              autoComplete='off'
+              {...register('email', emailValidation)}
+            />
+            {errors?.email && (
+              <small className='message'>{errors.email.message}</small>
+            )}
             <SecondaryButton>Subscribe</SecondaryButton>
           </form>
           <Paragraph dark={false}>*No spam, unsubscribe anytime</Paragraph>
