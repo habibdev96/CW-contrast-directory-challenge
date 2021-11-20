@@ -23,6 +23,27 @@ export const PrimaryButton = styled.button`
   }
 `;
 
+export const SubmitButton = styled.input`
+  ${headingStyles}
+  border: 0;
+  outline: 0;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  background-color: var(--purple);
+  color: var(--white);
+  border-radius: var(--mainRadius);
+  transition: var(--mainTransition);
+
+  ${media.md} {
+    width: 100%;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--purpleActive);
+  }
+`;
+
 export const SecondaryButton = styled(PrimaryButton)`
   background-color: var(--lightPurple);
   color: var(--purple);

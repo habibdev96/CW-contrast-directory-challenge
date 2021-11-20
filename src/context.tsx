@@ -1,5 +1,4 @@
 import React, { createContext, useState, useContext } from 'react';
-import { useForm } from 'react-hook-form';
 
 const useValue = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
@@ -9,13 +8,6 @@ const useValue = () => {
   const handleModalOpen = (): void => setIsModalOpen(true);
   const handleModalClose = (): void => setIsModalOpen(false);
 
-  const {
-    handleSubmit,
-    register,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (): void => console.log('hello world');
-
   return {
     isMobileMenuOpen,
     setIsMobileMenuOpen,
@@ -24,10 +16,6 @@ const useValue = () => {
     handleModalOpen,
     handleModalClose,
     handleMobileMenuClose,
-    handleSubmit,
-    register,
-    errors,
-    onSubmit,
   };
 };
 

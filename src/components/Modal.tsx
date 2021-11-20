@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import { useForm } from 'react-hook-form';
 import StyledOverlay from './styledElements/Overlay.styled';
 import { ModalHeading } from './styledElements/Headings.styled';
 import { ModalInput, ModalTextArea } from './styledElements/Inputs.styled';
 import { FaTimes } from 'react-icons/fa';
 import { flexBetween, textStyles } from '../abstracts/Mixins';
-import { PrimaryButton } from './styledElements/Buttons.styled';
+import { SubmitButton } from './styledElements/Buttons.styled';
 import { media } from '../abstracts/Responsive';
 import { useGlobalState } from '../context';
 
@@ -46,6 +47,7 @@ const StyledForm = styled.form`
 
   .form-control {
     margin: 2rem 0;
+    position: relative;
   }
 
   label {
@@ -57,14 +59,51 @@ const StyledForm = styled.form`
       color: var(--red);
     }
   }
+
+  .message {
+    position: absolute;
+    top: 65%;
+    left: 80%;
+    width: 100%;
+    font-size: 1.3rem;
+    color: var(--red);
+
+    &.textarea {
+      top: 85%;
+      left: 73%;
+
+      ${media.md} {
+        left: 60%;
+      }
+
+      ${media.sm} {
+        left: 50%;
+      }
+    }
+
+    ${media.md} {
+      left: 70%;
+    }
+
+    ${media.sm} {
+      left: 65%;
+    }
+  }
 `;
 
 const Modal = (): JSX.Element => {
   const { handleModalClose } = useGlobalState();
 
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm();
+  const onSubmitModal = (e: any): void => e.preventDefault();
+
   return (
     <StyledOverlay mobile={false}>
-      <StyledForm>
+      <StyledForm onSubmit={handleSubmit(onSubmitModal)}>
         <div className='header'>
           <ModalHeading>Submit Resources</ModalHeading>
           <button onClick={handleModalClose} className='toggler'>
@@ -76,14 +115,26 @@ const Modal = (): JSX.Element => {
           <label htmlFor='name'>
             Resource name <span>*</span>
           </label>
-          <ModalInput type='text' placeholder='UI8...' name='name' />
+          <ModalInput
+            type='text'
+            placeholder='UI8...'
+            autoComplete='off'
+            {...register('name', { required: true })}
+          />
+          {errors.name && <small className='message'>Name is required.</small>}
         </div>
         {/* single input */}
         <div className='form-control'>
-          <label htmlFor='name'>
+          <label htmlFor='description'>
             Resource Description <span>*</span>
           </label>
-          <ModalTextArea placeholder='100% curated digital marketplace...' />
+          <ModalTextArea
+            placeholder='100% curated digital marketplace...'
+            {...register('description', { required: true })}
+          />
+          {errors.description && (
+            <small className='message textarea'>Description is required.</small>
+          )}
         </div>
         {/* single input */}
         <div className='form-control'>
@@ -93,8 +144,9 @@ const Modal = (): JSX.Element => {
           <ModalInput
             type='text'
             placeholder='https://ui8.net...'
-            name='link'
+            {...register('link', { required: true })}
           />
+          {errors.link && <small className='message'>Link is required.</small>}
         </div>
         {/* single input */}
         <div className='form-control'>
@@ -103,13 +155,12 @@ const Modal = (): JSX.Element => {
           </label>
           <ModalInput
             type='text'
-            placeholder='https://scontent.faly2-2.fna.fbcdn.net/v/t1.6435-9/4642...'
-            name='icon'
+            placeholder='https://scontent.fal...'
+            {...register('icon', { required: true })}
           />
+          {errors.icon && <small className='message'>Icon is required.</small>}
         </div>
-        <PrimaryButton type='submit' onClick={(e) => e.preventDefault()}>
-          Submit Resource
-        </PrimaryButton>
+        <SubmitButton type='submit' value='Submit Resources' />
       </StyledForm>
     </StyledOverlay>
   );

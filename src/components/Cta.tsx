@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useForm } from 'react-hook-form';
 import Image from 'next/image';
 import showcase from '../../public/assets/hero-image.png';
 import { SectionHeading } from './styledElements/Headings.styled';
@@ -7,7 +8,6 @@ import { SecondaryInput } from './styledElements/Inputs.styled';
 import { SecondaryButton } from './styledElements/Buttons.styled';
 import { maxWidthLg, twoCol, flexAlign } from '../abstracts/Mixins';
 import { media } from '../abstracts/Responsive';
-import { useGlobalState } from '../context';
 
 const StyledSection = styled.section`
   margin: 0 2rem;
@@ -46,7 +46,7 @@ const Container = styled.div`
     top: -40%;
     left: 32%;
     font-size: 1.3rem;
-    color: var(--white);
+    color: var(--red);
 
     ${media.md} {
       top: -20%;
@@ -56,7 +56,12 @@ const Container = styled.div`
 `;
 
 const Cta = (): JSX.Element => {
-  const { handleSubmit, register, errors, onSubmit } = useGlobalState();
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm();
+  const onSubmitCta = (e: any): void => e.preventDefault();
 
   const emailValidation = {
     required: 'Email is required',
@@ -79,7 +84,7 @@ const Cta = (): JSX.Element => {
           </Paragraph>
           <form
             className={`form ${errors?.email && 'error'}`}
-            onSubmit={handleSubmit(onSubmit)}
+            onSubmit={handleSubmit(onSubmitCta)}
           >
             <SecondaryInput
               type='text'
