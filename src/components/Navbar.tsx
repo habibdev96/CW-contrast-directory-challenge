@@ -61,7 +61,7 @@ const Container = styled.div`
 `;
 
 const Navbar = (): JSX.Element => {
-  const { handleMobileMenuClose } = useGlobalState();
+  const { handleMobileMenuClose, handleModalOpen } = useGlobalState();
 
   return (
     <StyledNav>
@@ -81,7 +81,9 @@ const Navbar = (): JSX.Element => {
             <PrimaryInput placeholder='Search Resources' type='text' />
             <AiOutlineSearch className='icon' />
           </div>
-          <PrimaryButton className='btn'>Submit Resources</PrimaryButton>
+          <PrimaryButton className='btn' onClick={handleModalOpen}>
+            Submit Resources
+          </PrimaryButton>
         </div>
         <MobileMenuToggler />
       </Container>

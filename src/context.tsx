@@ -1,13 +1,20 @@
 import React, { createContext, useState, useContext } from 'react';
 
 const useValue = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const handleMobileMenuClose = (): void => setIsMobileMenuOpen(false);
+  const handleModalOpen = (): void => setIsModalOpen(true);
+  const handleModalClose = (): void => setIsModalOpen(false);
 
   return {
     isMobileMenuOpen,
     setIsMobileMenuOpen,
+    isModalOpen,
+    setIsModalOpen,
+    handleModalOpen,
+    handleModalClose,
     handleMobileMenuClose,
   };
 };

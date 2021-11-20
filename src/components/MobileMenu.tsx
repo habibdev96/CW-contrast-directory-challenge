@@ -3,21 +3,8 @@ import { NavbarLink } from './styledElements/Link.styled';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { PrimaryInput } from './styledElements/Inputs.styled';
 import { PrimaryButton } from './styledElements/Buttons.styled';
+import StyledOverlay from './styledElements/Overlay.styled';
 import { useGlobalState } from '../context';
-
-const Overlay = styled.div`
-  position: fixed;
-  z-index: 1500;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-
-  @media (min-width: 768px) {
-    display: none;
-  }
-`;
 
 const StyledMobileMenu = styled.div`
   position: fixed;
@@ -79,7 +66,7 @@ const MobileMenu = (): JSX.Element | null => {
 
   if (isMobileMenuOpen) {
     return (
-      <Overlay>
+      <StyledOverlay mobile={true}>
         <StyledMobileMenu>
           <div className='menu-content'>
             <ul className='menu-links'>
@@ -96,7 +83,7 @@ const MobileMenu = (): JSX.Element | null => {
             </form>
           </div>
         </StyledMobileMenu>
-      </Overlay>
+      </StyledOverlay>
     );
   } else {
     return null;

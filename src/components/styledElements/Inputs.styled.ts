@@ -23,3 +23,22 @@ export const SecondaryInput = styled(PrimaryInput)`
   color: var(--darkGrey);
   padding: 1rem;
 `;
+
+export const ModalInput = styled(PrimaryInput)`
+  width: 100%;
+  padding: 1rem;
+`;
+
+export const ModalTextArea = styled.textarea`
+  ${textStyles}
+  padding: 1rem;
+  outline: 0;
+  border: 0;
+  font-size: 1.5rem;
+  width: 100%;
+  height: 20vh;
+  resize: none;
+  color: var(--darkGrey);
+  border-radius: var(--mainRadius);
+  background-color: var(--offWhite);
+`;

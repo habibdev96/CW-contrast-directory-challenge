@@ -23,3 +23,9 @@ export const CardHeading = styled.h3`
   font-size: 1.8rem;
   color: var(--black);
 `;
+
+export const ModalHeading = styled.h4`
+  ${headingStyles}
+  font-size: 2.4rem;
+  color: var(--black);
+`;

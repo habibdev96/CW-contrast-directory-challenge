@@ -11,6 +11,7 @@ import {
   flexAlign,
 } from '../abstracts/Mixins';
 import { companyLogosData } from '../data';
+import { useGlobalState } from '../context';
 
 const Container = styled.div`
   ${maxWidthLg}
@@ -25,6 +26,8 @@ const Container = styled.div`
 `;
 
 const Hero = (): JSX.Element => {
+  const { handleModalOpen } = useGlobalState();
+
   return (
     <header>
       <Container>
@@ -34,7 +37,9 @@ const Hero = (): JSX.Element => {
             Explore a collection of 3400+ curated design resources, both free
             and paid, developers can use to create landing pages quicker.
           </Paragraph>
-          <PrimaryButton>Submit Resources</PrimaryButton>
+          <PrimaryButton onClick={handleModalOpen}>
+            Submit Resources
+          </PrimaryButton>
           <Paragraph dark={true}>Used by individuals in:</Paragraph>
           <div className='icons'>
             {companyLogosData.map((logo) => (
