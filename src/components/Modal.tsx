@@ -27,7 +27,9 @@ const StyledForm = styled.form`
   }
 
   ${media.sm} {
-    width: 95%;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
   }
 
   .header {
