@@ -23,6 +23,7 @@ const Container = styled.div`
   padding: 2rem 5rem;
   background-color: var(--purple);
   border-radius: var(--mainRadius);
+  overflow-x: hidden;
 
   ${media.md} {
     padding: 5rem 2rem 2rem 2rem;
