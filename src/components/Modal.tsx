@@ -19,6 +19,7 @@ const StyledForm = styled.form`
   height: 90%;
   margin: 0 auto;
   padding: 2rem;
+  overflow: auto;
   border-radius: var(--mainRadius);
   background-color: var(--white);
 
